@@ -204,4 +204,16 @@ var clienteA2 = _objectSpread({}, clienteA1, {
   nome: 'Jose da Lúcia'
 });
 
-console.log(clienteA2);
+console.log(clienteA2); //Template Literals
+
+var nomeB1 = "Francisco Viana";
+var idadeB1 = 19; //console.log("Meu nome é "+ nomeB1 + " e tenho " + idadeB1 + "anos");
+
+console.log("Meu nome \xE9 ".concat(nomeB1, " e tenho ").concat(idadeB1, " anos")); //Object Short Syntax
+
+var clienteB1 = {
+  nomeB1: nomeB1,
+  idadeB1: idadeB1,
+  enderecoB1: "São Jose"
+};
+console.log(clienteB1);

@@ -143,3 +143,19 @@ const clienteA1 = {
 const clienteA2 = {...clienteA1, nome:'Jose da Lúcia'};
 
 console.log(clienteA2);
+
+//Template Literals
+const nomeB1 = "Francisco Viana";
+const idadeB1 = 19;
+
+//console.log("Meu nome é "+ nomeB1 + " e tenho " + idadeB1 + "anos");
+console.log(`Meu nome é ${nomeB1} e tenho ${idadeB1} anos`);
+
+//Object Short Syntax
+
+const clienteB1 = {
+    nomeB1,
+    idadeB1,
+    enderecoB1: "São Jose"
+};
+console.log(clienteB1);
