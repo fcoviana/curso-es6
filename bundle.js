@@ -1,5 +1,15 @@
 "use strict";
 
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
@@ -149,4 +159,49 @@ function mostraNome(_ref) {
   console.log(nome);
 }
 
-mostraNome(usuario);
+mostraNome(usuario); //REST
+
+var cliente = {
+  nome: 'Talis Silva Babu',
+  idade: 30,
+  cidade: 'São João dos Queiroz'
+};
+
+var nome = cliente.nome,
+    resto = _objectWithoutProperties(cliente, ["nome"]);
+
+console.log(nome);
+console.log(resto);
+var arr1 = [10, 20, 30, 50];
+var a = arr1[0],
+    b = arr1[1],
+    c = arr1.slice(2);
+console.log(a);
+console.log(b);
+console.log(c);
+
+function soma1(a) {
+  for (var _len = arguments.length, params = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+    params[_key - 1] = arguments[_key];
+  }
+
+  return params;
+}
+
+console.log(soma1(10, 20, 20)); //SPREAD
+
+var arrA1 = [10, 20, 30, 40];
+var arrA2 = [50, 60, 70, 80, 90, 100];
+var arrA3 = [].concat(arrA1, arrA2);
+console.log(arrA3);
+var clienteA1 = {
+  nome: 'Talis Silva Babu',
+  idade: 30,
+  cidade: 'São João dos Queiroz'
+};
+
+var clienteA2 = _objectSpread({}, clienteA1, {
+  nome: 'Jose da Lúcia'
+});
+
+console.log(clienteA2);

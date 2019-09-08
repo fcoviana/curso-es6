@@ -101,3 +101,45 @@ function mostraNome({ nome }){
 }
 mostraNome(usuario);
 
+//REST
+const cliente = {
+    nome: 'Talis Silva Babu',
+    idade: 30,
+    cidade: 'São João dos Queiroz'
+};
+
+const {nome, ...resto} = cliente;
+
+console.log(nome);
+console.log(resto);
+
+const arr1 = [10,20,30,50];
+
+const [a,b,...c] = arr1;
+console.log(a);
+console.log(b);
+console.log(c);
+
+function soma1(a,...params){
+    return params;
+}
+
+console.log(soma1(10,20,20));
+
+//SPREAD
+const arrA1 = [10,20,30,40];
+const arrA2 = [50,60,70,80,90,100];
+
+const arrA3 = [...arrA1, ...arrA2];
+
+console.log(arrA3);
+
+const clienteA1 = {
+    nome: 'Talis Silva Babu',
+    idade: 30,
+    cidade: 'São João dos Queiroz'
+};
+
+const clienteA2 = {...clienteA1, nome:'Jose da Lúcia'};
+
+console.log(clienteA2);
