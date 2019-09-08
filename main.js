@@ -60,15 +60,13 @@ const newArr = arr.map(function(item, index){
 
 console.log(newArr);
 
-const sum = arr.reduce(function(total, next){
+const sum = arr.reduce((total, next) =>{
     return total + next;
 });
 
 console.log(sum);
 
-const filter = arr.filter(function(item){
-    return item % 2 === 0;
-});
+const filter = arr.filter(item => item % 2 === 0);
 
 console.log(filter);
 
@@ -77,3 +75,29 @@ const find = arr.find(function(item){
 });
 
 console.log(find);
+
+//arrow function
+
+const testeA = () => ({ nome: 'Pedro Barbosa'});
+console.log(testeA);
+
+const somaA = (a = 10, b = 23) => a + b;
+console.log(somaA(1,1));
+console.log(somaA(1));
+console.log(somaA());
+
+//desestruturacao
+const aluno = {
+    nome: 'Pedro Rosa',
+    matricula : 2018010076,
+    endereco: {
+        cidade: 'Quixadá',
+        estado: 'CE'
+    }
+};
+
+function mostraNome({ nome }){
+    console.log(nome);
+}
+mostraNome(usuario);
+

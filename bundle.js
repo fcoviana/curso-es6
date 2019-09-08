@@ -115,4 +115,38 @@ console.log(filter);
 var find = arr.find(function (item) {
   return item === 9;
 });
-console.log(find);
+console.log(find); //arrow function
+
+var testeA = function testeA() {
+  return {
+    nome: 'Pedro Barbosa'
+  };
+};
+
+console.log(testeA);
+
+var somaA = function somaA() {
+  var a = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 10;
+  var b = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 23;
+  return a + b;
+};
+
+console.log(somaA(1, 1));
+console.log(somaA(1));
+console.log(somaA()); //desestruturacao
+
+var aluno = {
+  nome: 'Pedro Rosa',
+  matricula: 2018010076,
+  endereco: {
+    cidade: 'Quixadá',
+    estado: 'CE'
+  }
+};
+
+function mostraNome(_ref) {
+  var nome = _ref.nome;
+  console.log(nome);
+}
+
+mostraNome(usuario);
