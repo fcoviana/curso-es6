@@ -68,7 +68,7 @@ function (_List) {
   function TodoList() {
     _classCallCheck(this, TodoList);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(TodoList).apply(this, arguments));
+    return _possibleConstructorReturn(this, _getPrototypeOf(TodoList).call(this));
   }
 
   return TodoList;
@@ -80,4 +80,39 @@ document.getElementById('add-todo').onclick = function () {
   MinhaLista.add("2019-08-27");
 };
 
-console.log("Soma: " + Matematica.soma(10, 17));
+console.log("Soma: " + Matematica.soma(10, 17)); //uso de const
+
+var usuario = {
+  nome: 'Francisco'
+};
+usuario.nome = 'Diego CTI';
+console.log(usuario); //usando LET
+
+function teste(x) {
+  var y = 10;
+
+  if (x > y) {
+    var _y = 2;
+    console.log(x, _y);
+  }
+}
+
+teste(30); //usando vetor
+
+var arr = [1, 2, 4, 6, 8, 9];
+var newArr = arr.map(function (item, index) {
+  return item * index;
+});
+console.log(newArr);
+var sum = arr.reduce(function (total, next) {
+  return total + next;
+});
+console.log(sum);
+var filter = arr.filter(function (item) {
+  return item % 2 === 0;
+});
+console.log(filter);
+var find = arr.find(function (item) {
+  return item === 9;
+});
+console.log(find);
