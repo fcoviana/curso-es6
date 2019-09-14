@@ -1,8 +1,11 @@
-import * as funcoes from './model/funcoes';
-//import  soma, { sub } from './funcoes';
-//import somaFunc from './soma';
+const minhaPromise = () => new Promise((resolve, reject) =>{
+    setTimeout(() => {resolve('OK')}, 2000);
+});
 
-console.log(funcoes.soma(10,30));
-console.log(funcoes.sub(100,30));
+async function executaPromise(){
+    console.log(await minhaPromise());
+    console.log(await minhaPromise()+' 2x');
+    console.log(await minhaPromise()+' 3x');
+}
 
-alert(funcoes.sub(100,30));
+executaPromise();
