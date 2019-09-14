@@ -5,11 +5,46 @@
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>ES6</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <style>
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        li {
+            clear: both;
+            margin-top: 20px;
+        }
+
+        img {
+            width: 80px;
+            float: left;
+            margin-right: 10px;
+        }
+
+        strong {
+            font-size: 20px;
+        }
+
+        p {
+            margin: 5px 0;
+        }
+    </style>
 </head>
 
 <body>
-    <input type="submit" value="Add" id="add-todo" />
+
+    <form id="repo-form">
+        <input type="text" name="repository" />
+        <button type="submit"> Adicionar</button>
+    </form>
+
+    <ul id="repo-list">
+       
+    </ul>
     <script src='./bundle.js'></script>
 </body>
 
